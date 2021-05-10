@@ -1,4 +1,4 @@
-FROM nginx
+FROM arm64v8/nginx
 
 USER root
 #RUN apt-get update
