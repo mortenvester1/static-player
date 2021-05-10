@@ -1,15 +1,21 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: static-player-deployment
+  name: static-player
   namespace: static-player
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: static-player
   template:
+    metadata:
+      labels:
+        app: static-player
     spec:
       containers:
       - env:
-        image:
+        image: mortenvester1/static-player-repo:latest
         imagePullPolicy: Always
         name: static-player
         ports:
