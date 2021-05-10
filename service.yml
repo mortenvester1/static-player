@@ -4,10 +4,12 @@ metadata:
   name: static-player-service
   namespace: static-player
 spec:
-  type: "LoadBalancer"
+  type: LoadBalancer
   ports:
-  - name: "http"
+  - name: http
     port: 1337
     targetPort: 1337
+    protocol: TCP
   selector:
-    name: static-player
+    app: static-player
+  sessionAffinity: None
