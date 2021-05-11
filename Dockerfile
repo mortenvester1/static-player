@@ -1,7 +1,4 @@
-# This works on raspberry
-FROM arm32v7/nginx
-# This works on M1
-# FROM arm64v8/nginx
+FROM nginx
 
 USER root
 #RUN apt-get update
